@@ -10,6 +10,14 @@ import 'package:test/test.dart';
 void main() {
   final prefix = 'Lim -';
 
+  group('$prefix Byte -', () {
+    test('max', () {
+      expect(Lim.maxByte.toString(), '255');
+    });
+    test('min', () {
+      expect(Lim.minByte.toString(), '0');
+    });
+  });
   group('$prefix Char Code -', () {
     test('last character', () {
       expect(String.fromCharCode(Lim.maxCharCode), '􏿿');
