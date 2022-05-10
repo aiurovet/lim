@@ -2,15 +2,14 @@
 // All rights reserved under MIT license (see LICENSE file)
 
 import 'package:lim/lim.dart';
-import 'package:intl/intl.dart';
 import 'package:test/test.dart';
 
 /// Unit tests for all Lim constants
 ///
 void main() {
-  final prefix = 'Lim -';
+  final p = 'Lim -';
 
-  group('$prefix Byte -', () {
+  group('$p Byte -', () {
     test('max', () {
       expect(Lim.maxByte.toString(), '255');
     });
@@ -18,7 +17,7 @@ void main() {
       expect(Lim.minByte.toString(), '0');
     });
   });
-  group('$prefix Char Code -', () {
+  group('$p Char Code -', () {
     test('last character', () {
       expect(String.fromCharCode(Lim.maxCharCode), '􏿿');
     });
@@ -28,6 +27,9 @@ void main() {
     test('highest ASCII', () {
       expect(Lim.maxCharCodeAscii.toRadixString(0x10).toLowerCase(), '7f');
     });
+    test('highest BMP', () {
+      expect(Lim.maxCharCodeBmp.toRadixString(0x10).toLowerCase(), 'ffff');
+    });
     test('highest Latin1', () {
       expect(Lim.maxCharCodeLatin1.toRadixString(0x10).toLowerCase(), 'ff');
     });
@@ -35,23 +37,29 @@ void main() {
       expect(Lim.minCharCode.toRadixString(0x10).toLowerCase(), '0');
     });
   });
-  group('$prefix DateTime -', () {
-    final f = DateFormat('y-MM-dd');
+  group('$p DateTime -', () {
     test('max', () {
       expect(Lim.maxDateTime.year, 275760);
-      expect(f.format(Lim.maxDateTime), '275760-09-13');
+      expect(Lim.maxDateTime.month, 9);
+      expect(Lim.maxDateTime.day, 13);
     });
     test('max safe', () {
-      expect(f.format(Lim.maxDateTimeSafe), '275760-09-12');
+      expect(Lim.maxDateTimeSafe.year, 275760);
+      expect(Lim.maxDateTimeSafe.month, 9);
+      expect(Lim.maxDateTimeSafe.day, 12);
     });
     test('min safe', () {
-      expect(Lim.minDateTimeSafe.day, 22);
+      expect(Lim.minDateTimeSafe.year, -271821);
+      expect(Lim.minDateTimeSafe.month, 4);
+      expect(Lim.minDateTimeSafe.day, 21);
     });
     test('min', () {
       expect(Lim.minDateTime.year, -271821);
+      expect(Lim.minDateTime.month, 4);
+      expect(Lim.minDateTime.day, 20);
     });
   });
-  group('$prefix Double -', () {
+  group('$p Double -', () {
     test('max', () {
       expect(Lim.maxDouble.toString(), '1.7976931348623157e+308');
     });
@@ -65,7 +73,7 @@ void main() {
       expect(Lim.minDoublePositive.toString(), '5e-324');
     });
   });
-  group('$prefix Int -', () {
+  group('$p Int -', () {
     test('max', () {
       expect(Lim.maxInt.toString(), '9007199254740991');
     });
@@ -73,7 +81,7 @@ void main() {
       expect(Lim.minInt.toString(), '-9007199254740992');
     });
   });
-  group('$prefix Num -', () {
+  group('$p Num -', () {
     test('max', () {
       expect(Lim.maxNum, Lim.maxDouble);
     });

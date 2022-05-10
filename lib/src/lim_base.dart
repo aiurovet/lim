@@ -12,15 +12,19 @@ class Lim {
   ///
   static final minByte = 0;
 
-  /// Highest character code (Unicode)
+  /// Highest character code for the Unicode set
   ///
   static final maxCharCode = 0x10FFFF;
 
-  /// Highest character code for ASCII (7-bit)
+  /// Highest character code for the ASCII set (7-bit)
   ///
   static final maxCharCodeAscii = 0x7F;
 
-  /// Highest character code for Latin-1 (8-bit)
+  /// Highest character code for the Basic Multilingual Plane (16-bit)
+  ///
+  static final maxCharCodeBmp = 0xFFFF;
+
+  /// Highest character code for the Latin-1 set (8-bit)
   ///
   static final maxCharCodeLatin1 = maxByte;
 
@@ -30,19 +34,19 @@ class Lim {
 
   /// Highest date/time
   ///
-  static final maxDateTime = DateTime(275760, 09, 13);
+  static final maxDateTime = DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpoch);
 
-  /// Highest safe date/time (max - 1d to allow timezone conversions)
+  /// Variation of [maxDateTime] capable of TZ conversions
   ///
-  static final maxDateTimeSafe = maxDateTime.add(Duration(days: -1));
+  static final maxDateTimeSafe = DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpochSafe);
 
-  /// Lowest date/time (.year fails on values lower than this)
+  /// Lowest date/time
   ///
-  static final minDateTime = DateTime(-271821, 4, 21);
+  static final minDateTime = DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpoch);
 
-  /// Lowest safe date/time (min + 1d to allow timezone conversions)
+  /// Variation of [minDateTime] capable of TZ conversions
   ///
-  static final minDateTimeSafe = minDateTime.add(Duration(days: 1));
+  static final minDateTimeSafe = DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpochSafe);
 
   /// Highest double
   ///
@@ -60,13 +64,45 @@ class Lim {
   ///
   static const minDoublePositive = 5e-324;
 
-  /// Highest integer
+  /// Highest portable integer
   ///
   static const maxInt = 9007199254740991;
 
-  /// Lowest integer
+  /// Lowest portable integer
   ///
   static const minInt = -9007199254740992;
+
+  /// Highest number of microseconds representing a date/time value
+  ///
+  static const maxMicrosecondsSinceEpoch = (Duration.microsecondsPerDay * 100 * 1000 * 1000);
+
+  /// Variation of [maxMicrosecondsSinceEpoch] capable of TZ conversions
+  ///
+  static const maxMicrosecondsSinceEpochSafe = (maxMicrosecondsSinceEpoch - Duration.microsecondsPerDay);
+
+  /// Lowest number of microseconds representing a date/time value
+  ///
+  static const minMicrosecondsSinceEpoch = -maxMicrosecondsSinceEpoch;
+
+  /// Variation of [minMicrosecondsSinceEpoch] capable of TZ conversions
+  ///
+  static const minMicrosecondsSinceEpochSafe = (minMicrosecondsSinceEpoch + Duration.microsecondsPerDay);
+
+  /// Highest number of milliseconds representing a date/time value
+  ///
+  static const maxMillisecondsSinceEpoch = (maxMicrosecondsSinceEpoch ~/ 1000);
+
+  /// Variation of [maxMillisecondsSinceEpoch] capable of TZ conversions
+  ///
+  static const maxMillisecondsSinceEpochSafe = (maxMicrosecondsSinceEpochSafe ~/ 1000);
+
+  /// Lowest number of milliseconds representing a date/time value
+  ///
+  static const minMillisecondsSinceEpoch = (minMicrosecondsSinceEpoch ~/ 1000);
+
+  /// Variation of [minMillisecondsSinceEpoch] capable of TZ conversions
+  ///
+  static const minMillisecondsSinceEpochSafe = (minMicrosecondsSinceEpochSafe ~/ 1000);
 
   /// Highest numeric (same as double)
   ///
