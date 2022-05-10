@@ -1,6 +1,6 @@
 name: lim
 description: A set of maximum and minimum constant values for Dart datatypes and character codes.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/aiurovet/lim/
 
 environment:
@@ -9,4 +9,3 @@ environment:
 dev_dependencies:
   lints: ^1.0.0
   test: ^1.16.0
-  intl: ^0.17.0
