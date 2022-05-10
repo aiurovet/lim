@@ -34,19 +34,23 @@ class Lim {
 
   /// Highest date/time
   ///
-  static final maxDateTime = DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpoch);
+  static final maxDateTime =
+      DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpoch);
 
   /// Variation of [maxDateTime] capable of TZ conversions
   ///
-  static final maxDateTimeSafe = DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpochSafe);
+  static final maxDateTimeSafe =
+      DateTime.fromMicrosecondsSinceEpoch(maxMicrosecondsSinceEpochSafe);
 
   /// Lowest date/time
   ///
-  static final minDateTime = DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpoch);
+  static final minDateTime =
+      DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpoch);
 
   /// Variation of [minDateTime] capable of TZ conversions
   ///
-  static final minDateTimeSafe = DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpochSafe);
+  static final minDateTimeSafe =
+      DateTime.fromMicrosecondsSinceEpoch(minMicrosecondsSinceEpochSafe);
 
   /// Highest double
   ///
@@ -74,11 +78,13 @@ class Lim {
 
   /// Highest number of microseconds representing a date/time value
   ///
-  static const maxMicrosecondsSinceEpoch = (Duration.microsecondsPerDay * 100 * 1000 * 1000);
+  static const maxMicrosecondsSinceEpoch =
+      (Duration.microsecondsPerDay * 100 * 1000 * 1000);
 
   /// Variation of [maxMicrosecondsSinceEpoch] capable of TZ conversions
   ///
-  static const maxMicrosecondsSinceEpochSafe = (maxMicrosecondsSinceEpoch - Duration.microsecondsPerDay);
+  static const maxMicrosecondsSinceEpochSafe =
+      (maxMicrosecondsSinceEpoch - Duration.microsecondsPerDay);
 
   /// Lowest number of microseconds representing a date/time value
   ///
@@ -86,7 +92,8 @@ class Lim {
 
   /// Variation of [minMicrosecondsSinceEpoch] capable of TZ conversions
   ///
-  static const minMicrosecondsSinceEpochSafe = (minMicrosecondsSinceEpoch + Duration.microsecondsPerDay);
+  static const minMicrosecondsSinceEpochSafe =
+      (minMicrosecondsSinceEpoch + Duration.microsecondsPerDay);
 
   /// Highest number of milliseconds representing a date/time value
   ///
@@ -94,7 +101,8 @@ class Lim {
 
   /// Variation of [maxMillisecondsSinceEpoch] capable of TZ conversions
   ///
-  static const maxMillisecondsSinceEpochSafe = (maxMicrosecondsSinceEpochSafe ~/ 1000);
+  static const maxMillisecondsSinceEpochSafe =
+      (maxMicrosecondsSinceEpochSafe ~/ 1000);
 
   /// Lowest number of milliseconds representing a date/time value
   ///
@@ -102,7 +110,8 @@ class Lim {
 
   /// Variation of [minMillisecondsSinceEpoch] capable of TZ conversions
   ///
-  static const minMillisecondsSinceEpochSafe = (minMicrosecondsSinceEpochSafe ~/ 1000);
+  static const minMillisecondsSinceEpochSafe =
+      (minMicrosecondsSinceEpochSafe ~/ 1000);
 
   /// Highest numeric (same as double)
   ///
