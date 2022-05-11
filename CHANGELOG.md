@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Changed the homepage
+
 ## 0.1.2
 
 - Converted CharCode-specific members from final to const
