@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Converted CharCode-specific members from final to const
+
 ## 0.1.1
 
 - Added limits for micro and milliseconds since the epoch

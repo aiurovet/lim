@@ -6,31 +6,31 @@
 class Lim {
   /// Highest byte value
   ///
-  static final maxByte = 0xFF;
+  static const maxByte = 0xFF;
 
   /// Lowest byte value
   ///
-  static final minByte = 0;
+  static const minByte = 0;
 
   /// Highest character code for the Unicode set
   ///
-  static final maxCharCode = 0x10FFFF;
+  static const maxCharCode = 0x10FFFF;
 
   /// Highest character code for the ASCII set (7-bit)
   ///
-  static final maxCharCodeAscii = 0x7F;
+  static const maxCharCodeAscii = 0x7F;
 
   /// Highest character code for the Basic Multilingual Plane (16-bit)
   ///
-  static final maxCharCodeBmp = 0xFFFF;
+  static const maxCharCodeBmp = 0xFFFF;
 
   /// Highest character code for the Latin-1 set (8-bit)
   ///
-  static final maxCharCodeLatin1 = maxByte;
+  static const maxCharCodeLatin1 = maxByte;
 
   /// Lowest character code
   ///
-  static final minCharCode = 0;
+  static const minCharCode = 0;
 
   /// Highest date/time
   ///
