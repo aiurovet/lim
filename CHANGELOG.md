@@ -1,3 +1,8 @@
+## 0.1.4
+
+- Upgraded compiler version to 2.17
+- Added the project repo to pubspec.yaml
+
 ## 0.1.3
 
 - Changed the homepage

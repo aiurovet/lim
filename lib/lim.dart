@@ -1,6 +1,8 @@
-/// Support for doing something awesome.
+// Copyright (c) 2022, Alexander Iurovetski
+// All rights reserved under MIT license (see LICENSE file)
+
+/// lim exports
 ///
-/// More dartdocs go here.
 library lim;
 
 export 'src/lim_base.dart';
